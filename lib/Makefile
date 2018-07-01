@@ -1,0 +1,75 @@
+# $NetBSD: Makefile.in,v 1.35 2007/05/16 11:05:10 fukumoto Exp $
+
+LIBISPRIVATE=yes
+
+.include <bsd.init.mk>
+
+YFLAGS	+=-d
+.PATH: ${DIST}/lib
+CPPFLAGS+= \
+-I${DIST}/lib \
+-DCF_DEBUG=1 \
+-DENABLE_NATT=1 \
+-DENABLE_SECURE=1 \
+-DHAVE_ATOLL=1 \
+-DHAVE_GETIFADDRS=1 \
+-DHAVE_GETTIMEOFDAY=1 \
+-DHAVE_INTTYPES_H=1 \
+-DHAVE_LIMITS_H=1 \
+-DHAVE_MEMORY_H=1 \
+-DHAVE_MKTIME=1 \
+-DHAVE_NETINET6_IPSEC_H=1 \
+-DHAVE_NETIPSEC_IPSEC_H=1 \
+-DHAVE_NET_PFKEYV2_H=1 \
+-DHAVE_OPENSSL_EVP_H=1 \
+-DHAVE_SA_LEN=1 \
+-DHAVE_SOCKET=1 \
+-DHAVE_STDARG_H=1 \
+-DHAVE_STDINT_H=1 \
+-DHAVE_STDLIB_H=1 \
+-DHAVE_STRDUP=1 \
+-DHAVE_STRERROR=1 \
+-DHAVE_STRFTIME=1 \
+-DHAVE_STRINGS_H=1 \
+-DHAVE_STRING_H=1 \
+-DHAVE_STRLCAT=1 \
+-DHAVE_STRLCPY=1 \
+-DHAVE_STRTOL=1 \
+-DHAVE_SYS_STAT_H=1 \
+-DHAVE_SYS_TIME_H=1 \
+-DHAVE_SYS_TYPES_H=1 \
+-DHAVE_SYS_WAIT_H=1 \
+-DHAVE_UNISTD_H=1 \
+-DHAVE_UNISTD_H=1 \
+-DHAVE_VPRINTF=1 \
+-DPACKAGE_BUGREPORT=\"\" \
+-DPACKAGE_NAME=\"\" \
+-DPACKAGE_STRING=\"\" \
+-DPACKAGE_TARNAME=\"\" \
+-DPACKAGE_URL=\"\" \
+-DPACKAGE_VERSION=\"\" \
+-DSTDC_HEADERS=1 \
+-DTIME_WITH_SYS_TIME=1 \
+-DYYTEXT_POINTER=1
+
+
+LIB=	racoon
+SRCS= \
+addresspool.c \
+cfparse.y \
+cfsetup.c \
+cftoken.l \
+if_pfkeyv2.c \
+if_spmd.c \
+pidfile.c \
+plog.c \
+rbuf.c \
+rc_net.c \
+rc_pcap.c \
+rc_str.c \
+rc_type.c \
+safefile.c \
+version.c \
+vmbuf.c
+
+.include <bsd.lib.mk>
