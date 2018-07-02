@@ -142,8 +142,11 @@
 /* define if struct sockaddr has sa_len field */
 #define HAVE_SA_LEN 1
 
+#ifndef __NetBSD__
+/* Conditional by the build process */
 /* define if IPv6 is enabled */
 #define INET6 1
+#endif
 
 /* define if IPv6 advanced API is available */
 #define ADVAPI 1
