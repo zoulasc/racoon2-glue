@@ -72,4 +72,8 @@ DPADD+= ${LIBPCAP}
 
 MAN = iked.8
 
+iked.8: iked.8.in __subst
+CLEANFILES+=iked.8
+
 .include <bsd.prog.mk>
+

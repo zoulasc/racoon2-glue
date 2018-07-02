@@ -45,4 +45,7 @@ DPADD+= ${LIBKRB5} ${LIBASN1} ${LIBROKEN} ${LIBCOM_ERR}
 LDADD+= -lcrypto -lcrypt -lresolv
 DPADD+= ${LIBCRYPTO} ${LIBCRYPT} ${LIBRESOLV}
 
+kinkd.8: kinkd.8.in __subst
+CLEANFILES+=kinkd.8
+
 .include <bsd.prog.mk>

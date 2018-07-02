@@ -8,10 +8,22 @@ USE_FORT?= yes	# network client/server
 
 DIST:=	${.PARSEDIR}/dist
 
-CPPFLAGS+= -DSYSCONFDIR=\"/etc/racoon2\"
-
 BINDIR=/usr/sbin
+SYSCONFDIR=/etc/racoon2
+
+CPPFLAGS+= -DSYSCONFDIR=\"${SYSCONFDIR}\"
 
 .if ${MKINET6} != "no"
 CPPFLAGS+= -DINET6
 .endif
+
+__subst: .USE
+	@${_MKTARGET_CREATE}
+	@${TOOL_SED} \
+	    -e 's%@prefix@%%g' \
+	    -e 's%@sbindir@%${BINDIR}%g' \
+	    -e 's%@sysconfdir@%${SYSCONFDIR}%g' < ${.ALLSRC} > ${.TARGET}
+
+.SUFFIXES: .in
+
+.in: __subst
