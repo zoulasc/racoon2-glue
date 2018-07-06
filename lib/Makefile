@@ -4,6 +4,7 @@ LIBISPRIVATE=yes
 
 .include <bsd.init.mk>
 
+#DBG=-g
 YFLAGS	+=-d
 .PATH: ${DIST}/lib
 CPPFLAGS+= -I${.CURDIR} -I${DIST}/lib -DHAVE_CONFIG_H #-DCF_DEBUG
