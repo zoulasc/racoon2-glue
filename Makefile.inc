@@ -12,18 +12,17 @@ BINDIR=/usr/sbin
 SYSCONFDIR=/etc/racoon2
 
 CPPFLAGS+= -DSYSCONFDIR=\"${SYSCONFDIR}\"
+#MKSANITIZER=yes
 
 .if ${MKINET6} != "no"
 CPPFLAGS+= -DINET6
 .endif
 
-__subst: .USE
+.SUFFIXES: .in
+
+.in:
 	@${_MKTARGET_CREATE}
 	@${TOOL_SED} \
 	    -e 's%@prefix@%%g' \
 	    -e 's%@sbindir@%${BINDIR}%g' \
 	    -e 's%@sysconfdir@%${SYSCONFDIR}%g' < ${.ALLSRC} > ${.TARGET}
-
-.SUFFIXES: .in
-
-.in: __subst
