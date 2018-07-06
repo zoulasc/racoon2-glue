@@ -8,6 +8,8 @@ IKEV2=${DIST}/iked/
 
 PROG = iked
 CPPFLAGS += -I${.CURDIR} -I${IKEV1} -I${IKEV2} -I${DIST}/lib -DHAVE_CONFIG_H
+#DBG=-g
+#CPPFLAGS += -DDEBUG -DDEBUG_TRACE
 
 IKEV1_SRC= \
 algorithm.c \
