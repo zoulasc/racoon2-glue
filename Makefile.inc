@@ -20,6 +20,13 @@ CPPFLAGS+= -DINET6
 
 .SUFFIXES: .in
 
+__subst: .USE
+	@${_MKTARGET_CREATE}
+	@${TOOL_SED} \
+	    -e 's%@prefix@%%g' \
+	    -e 's%@sbindir@%${BINDIR}%g' \
+	    -e 's%@sysconfdir@%${SYSCONFDIR}%g' < ${.ALLSRC} > ${.TARGET}
+
 .in:
 	@${_MKTARGET_CREATE}
 	@${TOOL_SED} \
