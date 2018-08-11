@@ -12,6 +12,8 @@ BINDIR=/usr/sbin
 SYSCONFDIR=/etc/racoon2
 
 CPPFLAGS+= -DSYSCONFDIR=\"${SYSCONFDIR}\"
+# Openssl 1.1 compatability (for NetBSD 8.x)
+#CPPFLAGS+= -DOPENSSL_API_COMPAT=0x10100000L
 #MKSANITIZER=yes
 
 .if ${MKINET6} != "no"
