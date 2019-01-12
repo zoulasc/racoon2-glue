@@ -71,7 +71,7 @@
 #define HAVE_MIT_COMPAT_KRB5_FREE_TICKET 1
 
 /* Define to 1 if you have the <netinet6/ipsec.h> header file. */
-#define HAVE_NETINET6_IPSEC_H 1
+/* #undef HAVE_NETINET6_IPSEC_H */
 
 /* Define to 1 if you have the <netipsec/ipsec.h> header file. */
 #define HAVE_NETIPSEC_IPSEC_H 1

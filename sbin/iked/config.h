@@ -41,7 +41,7 @@
 #define HAVE_NETDB_H 1
 
 /* Define to 1 if you have the <netinet6/ipsec.h> header file. */
-#define HAVE_NETINET6_IPSEC_H 1
+/* #undef HAVE_NETINET6_IPSEC_H */
 
 /* Define to 1 if you have the <netinet/in.h> header file. */
 #define HAVE_NETINET_IN_H 1
@@ -185,7 +185,9 @@
 /* #undef WITH_PARSECOA */
 
 /* define to listen PF_ROUTE socket */
-/* #undef WITH_RTSOCK */
+#define WITH_RTSOCK 1
+
+#define WITH_ADMIN 1
 
 /* define if SHA2 can be used */
 #define WITH_SHA2 1

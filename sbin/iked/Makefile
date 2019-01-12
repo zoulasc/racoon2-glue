@@ -49,6 +49,7 @@ $(IKEV1_NATT_SRC) \
 $(IKEV1_SRC) \
 $(IKEV2_NATT_SRC) \
 $(IKEV2_SRC) \
+admin.c \
 authenticator.c \
 crypto_openssl.c \
 dh.c \
