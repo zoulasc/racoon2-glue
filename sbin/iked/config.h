@@ -13,6 +13,9 @@
 /* Define to 1 if you have the `daemon' function. */
 #define HAVE_DAEMON 1
 
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#define HAVE_DLFCN_H 1
+
 /* define if __func__ macro is available */
 #define HAVE_FUNC_MACRO 1
 
@@ -29,7 +32,7 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the `pcap' library (-lpcap). */
-#define HAVE_LIBPCAP 1
+/* #undef HAVE_LIBPCAP */
 
 /* Define to 1 if you have the <limits.h> header file. */
 #define HAVE_LIMITS_H 1
@@ -142,29 +145,32 @@
 /* window size of IPsec SA created by IKEv2 */
 /* #undef IKEV2_IPSEC_WINDOW_SIZE */
 
-#ifndef __NetBSD__
 /* define if IPv6 is enabled */
-/* controlled by the build */
 #define INET6 1
-#endif
+
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
+#define LT_OBJDIR ".libs/"
+
+/* Name of package */
+#define PACKAGE "racoon2"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT ""
+#define PACKAGE_BUGREPORT "racoon2@mailmain.astron.com"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME ""
+#define PACKAGE_NAME "racoon2"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING ""
+#define PACKAGE_STRING "racoon2 2018-07-09"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME ""
+#define PACKAGE_TARNAME "racoon2"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION ""
+#define PACKAGE_VERSION "2018-07-09"
 
 /* Define as the return type of signal handlers (`int' or `void'). */
 #define RETSIGTYPE void
@@ -178,6 +184,9 @@
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
 #define TIME_WITH_SYS_TIME 1
 
+/* Version number of package */
+#define VERSION "2018-07-09"
+
 /* define to use OpenSSL ENGINE */
 #define WITH_OPENSSL_ENGINE 1
 
@@ -185,9 +194,7 @@
 /* #undef WITH_PARSECOA */
 
 /* define to listen PF_ROUTE socket */
-#define WITH_RTSOCK 1
-
-#define WITH_ADMIN 1
+/* #undef WITH_RTSOCK */
 
 /* define if SHA2 can be used */
 #define WITH_SHA2 1

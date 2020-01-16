@@ -4,6 +4,9 @@
 /* Default nonce size */
 #define DEFAULT_NONCE_SIZE 16
 
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#define HAVE_DLFCN_H 1
+
 /* Define to 1 if you have the `getprogname' function. */
 #define HAVE_GETPROGNAME 1
 
@@ -22,8 +25,14 @@
 /* Define to 1 if you have the <krb5.h> header file. */
 #define HAVE_KRB5_H 1
 
+/* Have the Heimdal Kerberos libraries */
+#define HAVE_KRB5_HEIMDAL 1
+
 /* Define to 1 if you have the <krb5/krb5.h> header file. */
 #define HAVE_KRB5_KRB5_H 1
+
+/* Have the MIT Kerberos libraries */
+/* #undef HAVE_KRB5_MIT */
 
 /* Define to 1 if you have the `krb5_nfold' function. */
 /* #undef HAVE_KRB5_NFOLD */
@@ -136,23 +145,29 @@
 /* Kink default port */
 #define KINK_DEFAULT_PORT "910"
 
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
+#define LT_OBJDIR ".libs/"
+
+/* Name of package */
+#define PACKAGE "racoon2"
+
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT ""
+#define PACKAGE_BUGREPORT "racoon2@mailmain.astron.com"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME ""
+#define PACKAGE_NAME "racoon2"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING ""
+#define PACKAGE_STRING "racoon2 2018-07-09"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME ""
+#define PACKAGE_TARNAME "racoon2"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION ""
+#define PACKAGE_VERSION "2018-07-09"
 
 /* Define as the return type of signal handlers (`int' or `void'). */
 #define RETSIGTYPE void
@@ -162,6 +177,9 @@
 
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
 #define TIME_WITH_SYS_TIME 1
+
+/* Version number of package */
+#define VERSION "2018-07-09"
 
 /* Enable program log */
 #define WITH_PLOG 1
