@@ -7,6 +7,8 @@ SPMD=${DIST}/spmd
 
 PROG = spmd
 CPPFLAGS += -I${.CURDIR} -I${SPMD} -I${DIST}/lib -DHAVE_CONFIG_H
+#DBG = -g
+#CPPFLAGS += -DSPMD_DEBUG
 
 SRCS = \
 main.c \
